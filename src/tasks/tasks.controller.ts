@@ -14,7 +14,10 @@ import { Logger } from '@nestjs/common';
 export class TasksController {
     private logger = new Logger('TaskController');
 
-    constructor(private tasksService: TasksService) {}
+    constructor(
+        private tasksService: TasksService,
+    ) {
+    }
 
     @Get()
     getTasks(@Query() filterDto: GetTasksFilterDto, @GetUser() user: User): Promise<Task[]> {
