@@ -11,7 +11,6 @@ import { configValidationSchema } from './config.schema';
       envFilePath: [`.env.stage.${process.env.STAGE}`],
       validationSchema: configValidationSchema,
     }),
-    TasksModule,
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
@@ -33,6 +32,7 @@ import { configValidationSchema } from './config.schema';
         };
       },
     }),
+    TasksModule,
     AuthModule,
   ],
 })
